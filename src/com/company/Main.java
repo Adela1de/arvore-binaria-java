@@ -8,27 +8,31 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Documento documento = new Documento();
+        Documento<Integer> documento = new Documento<>();
+        gerenciarDocumento(documento);
+
+    }
+
+    public static <T extends Comparable> void gerenciarDocumento(Documento documento)
+    {
         Integer menu = 1;
         while(menu != 0)
         {
             System.out.println(
                     "\n\nDigite 1 para adicionar uma nova árvore do tipo Integer ao documento.\n" +
-                    "Digite 2 para adicionar uma nova árvore do tipo Double ao documento.\n" +
-                    "Digite 3 para a quantidade de árvores.\n" +
-                    "Digite 4 para acessar uma árvore já criada.\n" +
-                    "Digite qualquer outro número para sair.\n"
+                            "Digite 2 para a quantidade de árvores.\n" +
+                            "Digite 3 para acessar uma árvore já criada.\n" +
+                            "Digite qualquer outro número para sair.\n"
             );
             System.out.print("Escolha:");
             menu = s.nextInt();
-            if(menu == 1) gerenciarArvore(documento.adicionarArvore(new Arvore<Integer>(Integer.class)));
-            else if(menu == 2) gerenciarArvore(documento.adicionarArvore(new Arvore<Double>(Double.class)));
-            else if(menu == 3)
+            if(menu == 1) gerenciarArvore(documento.adicionarArvore(new Arvore<Integer>()));
+            else if(menu == 2)
             {
                 System.out.println("A quantidade de árvores presentes no documento: ");
                 documento.arvoresCriadasDetalhada();
             }
-            else if(menu == 4)
+            else if(menu == 3)
             {
                 documento.arvoresCriadasDetalhada();
                 System.out.print("Informe a arvore que deseja acessar: ");

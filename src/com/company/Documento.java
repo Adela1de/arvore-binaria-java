@@ -16,7 +16,7 @@ public class Documento<T extends Comparable> {
     public Arvore<T> adicionarArvore(Arvore<T> arvore)
     {
         this.arvoreList.add(arvore);
-        return this.arvoreList.get(this.arvoreList.indexOf(arvore));
+        return getArvore(arvoreList.indexOf(arvore));
     }
 
     public void arvoresCriadasDetalhada()
@@ -27,7 +27,7 @@ public class Documento<T extends Comparable> {
             int count = 0;
             for (Arvore a: arvoreList)
             {
-                System.out.println("Arvore numero "+count+ " é do tipo " + a.getType());
+                System.out.println("Arvore numero "+count+ " é do tipo Integer");
                 count++;
             }
         }

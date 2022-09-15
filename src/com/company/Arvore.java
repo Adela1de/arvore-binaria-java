@@ -2,12 +2,10 @@ package com.company;
 
 public class Arvore<T extends Comparable> {
 
-    final Class<T> typeParameterClass;
     private Elemento<T> raiz;
 
-    public Arvore(Class<T> typeParameterClass)
+    public Arvore()
     {
-        this.typeParameterClass = typeParameterClass;
         this.raiz = null;
     }
 
@@ -76,10 +74,17 @@ public class Arvore<T extends Comparable> {
             {
                 if(elementoAtual.getEsquerda() != null)
                 {
-                    System.out.println("Elemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda().getValor() +" e a direita: "+elementoAtual.getDireita().getValor());
+                    System.out.print("\nElemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda().getValor());
+                    if(elementoAtual.getDireita() != null)
+                        System.out.println(" e a direita: "+elementoAtual.getDireita().getValor()+ "\n");
                     elementoAtual = elementoAtual.getEsquerda();
+                    branch++;
                 }
-                else break;
+                else
+                {
+                    System.out.println("\nNão há mais elementos na árvore");
+                    break;
+                }
             }
         }
     }
@@ -91,7 +96,7 @@ public class Arvore<T extends Comparable> {
         {
             System.out.println("Valor da raiz: "+this.raiz.getValor());
             Elemento<T> elementoAtual = this.raiz;
-            Integer branch = 1;
+            Integer branch = 2;
 
             if(elementoAtual.getDireita() != null)
             {
@@ -103,16 +108,18 @@ public class Arvore<T extends Comparable> {
             {
                 if(elementoAtual.getDireita() != null)
                 {
-                    System.out.println("Elemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda().getValor() +" e a direita: "+elementoAtual.getEsquerda().getValor());
+                    System.out.print("\nElemento da "+branch+"º branch a esquerda: "+elementoAtual.getDireita().getValor());
+                    if(elementoAtual.getEsquerda() != null)
+                        System.out.println(" e a direita: "+elementoAtual.getEsquerda().getValor() + "\n");
                     elementoAtual = elementoAtual.getDireita();
+                    branch++;
                 }
-                else break;
+                else
+                {
+                    System.out.println("\nNão há mais elementos na árvore");
+                    break;
+                }
             }
         }
-    }
-
-    public String getType()
-    {
-        return this.typeParameterClass.getName();
     }
 }
