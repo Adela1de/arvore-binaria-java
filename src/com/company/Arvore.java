@@ -99,7 +99,7 @@ public class Arvore<T extends Comparable> {
 
             while(true)
             {
-                if(elementoAtual.getDireita() != null && elementoAtual != this.raiz)
+                if(elementoAtual.getDireita() != null)
                 {
                     System.out.println("Elemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda().getValor() +" e a direita: "+elementoAtual.getEsquerda().getValor());
                     elementoAtual = elementoAtual.getDireita();
