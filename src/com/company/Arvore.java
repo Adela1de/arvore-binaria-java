@@ -2,10 +2,12 @@ package com.company;
 
 public class Arvore<T extends Comparable> {
 
+    final Class<T> typeParameterClass;
     private Elemento<T> raiz;
 
-    public Arvore()
+    public Arvore(Class<T> typeParameterClass)
     {
+        this.typeParameterClass = typeParameterClass;
         this.raiz = null;
     }
 
@@ -107,5 +109,10 @@ public class Arvore<T extends Comparable> {
                 else break;
             }
         }
+    }
+
+    public String getType()
+    {
+        return this.typeParameterClass.getName();
     }
 }
