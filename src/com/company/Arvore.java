@@ -63,18 +63,18 @@ public class Arvore<T extends Comparable> {
         {
             System.out.println("Valor da raiz: "+this.raiz.getValor());
             Elemento<T> elementoAtual = this.raiz;
-            Integer branch = 1;
+            Integer branch = 2;
 
             if(elementoAtual.getEsquerda() != null) {
-                System.out.println("Valor a esquerda : " + elementoAtual.getEsquerda());
+                System.out.println("Valor a esquerda da raiz: " + elementoAtual.getEsquerda().getValor());
                 elementoAtual = elementoAtual.getEsquerda();
             }
 
             while(true)
             {
-                if(elementoAtual.getEsquerda() != null && elementoAtual != this.raiz)
+                if(elementoAtual.getEsquerda() != null)
                 {
-                    System.out.println("Elemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda() +" e a direita: "+elementoAtual.getEsquerda());
+                    System.out.println("Elemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda().getValor() +" e a direita: "+elementoAtual.getDireita().getValor());
                     elementoAtual = elementoAtual.getEsquerda();
                 }
                 else break;
@@ -93,7 +93,7 @@ public class Arvore<T extends Comparable> {
 
             if(elementoAtual.getDireita() != null)
             {
-                System.out.println("Valor a esquerda : " + elementoAtual.getDireita().toString());
+                System.out.println("Valor a direita da raiz : " + elementoAtual.getDireita().getValor());
                 elementoAtual = elementoAtual.getDireita();
             }
 
@@ -101,8 +101,8 @@ public class Arvore<T extends Comparable> {
             {
                 if(elementoAtual.getDireita() != null && elementoAtual != this.raiz)
                 {
-                    System.out.println("Elemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda().toString() +" e a direita: "+elementoAtual.getEsquerda().toString());
-                    elementoAtual = elementoAtual.getEsquerda();
+                    System.out.println("Elemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda().getValor() +" e a direita: "+elementoAtual.getEsquerda().getValor());
+                    elementoAtual = elementoAtual.getDireita();
                 }
                 else break;
             }
