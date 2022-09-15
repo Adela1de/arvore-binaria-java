@@ -13,10 +13,10 @@ public class Documento<T extends Comparable> {
         this.arvoreList = new ArrayList<>();
     }
 
-    public void adicionarArvore(Arvore<T> arvore)
+    public Arvore<T> adicionarArvore(Arvore<T> arvore)
     {
-
         this.arvoreList.add(arvore);
+        return this.arvoreList.get(this.arvoreList.indexOf(arvore));
     }
 
     public void arvoresCriadasDetalhada()

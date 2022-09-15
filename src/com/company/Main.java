@@ -21,8 +21,8 @@ public class Main {
             );
             System.out.print("Escolha:");
             menu = s.nextInt();
-            if(menu == 1) documento.adicionarArvore(new Arvore<Integer>(Integer.class));
-            else if(menu == 2) documento.adicionarArvore(new Arvore<Double>(Double.class));
+            if(menu == 1) gerenciarArvore(documento.adicionarArvore(new Arvore<Integer>(Integer.class)));
+            else if(menu == 2) gerenciarArvore(documento.adicionarArvore(new Arvore<Double>(Double.class)));
             else if(menu == 3)
             {
                 System.out.println("A quantidade de árvores presentes no documento: ");
@@ -38,7 +38,6 @@ public class Main {
             }
             else break;
         }
-
     }
 
     private static <T extends Comparable> void gerenciarArvore(Arvore arvore)
