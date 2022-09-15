@@ -8,12 +8,11 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Documento<Integer> documento = new Documento<>();
+        Documento documento = new Documento();
         gerenciarDocumento(documento);
-
     }
 
-    public static <T extends Comparable> void gerenciarDocumento(Documento documento)
+    public static void gerenciarDocumento(Documento documento)
     {
         Integer menu = 1;
         while(menu != 0)
@@ -26,7 +25,7 @@ public class Main {
             );
             System.out.print("Escolha:");
             menu = s.nextInt();
-            if(menu == 1) gerenciarArvore(documento.adicionarArvore(new Arvore<Integer>()));
+            if(menu == 1) gerenciarArvore(documento.adicionarArvore(new Arvore()));
             else if(menu == 2)
             {
                 System.out.println("A quantidade de árvores presentes no documento: ");
@@ -44,7 +43,7 @@ public class Main {
         }
     }
 
-    private static <T extends Comparable> void gerenciarArvore(Arvore arvore)
+    private static void gerenciarArvore(Arvore arvore)
     {
         Integer menu = 1;
         while (menu != 0)
@@ -69,4 +68,5 @@ public class Main {
             else break;
         }
     }
+
 }

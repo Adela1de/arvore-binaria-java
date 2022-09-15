@@ -1,39 +1,39 @@
 package com.company;
 
-public class Elemento<T> {
+public class Elemento {
 
-    private T valor;
-    private Elemento<T> esquerda;
-    private Elemento<T> direita;
+    private Integer valor;
+    private Elemento esquerda;
+    private Elemento direita;
 
-    public Elemento(T valor)
+    public Elemento(Integer valor)
     {
         this.valor = valor;
         this.esquerda = null;
         this.direita = null;
     }
 
-    public T getValor() {
+    public Integer getValor() {
         return valor;
     }
 
-    public Elemento<T> getEsquerda() {
+    public void setValor(Integer valor) {
+        this.valor = valor;
+    }
+
+    public Elemento getEsquerda() {
         return esquerda;
     }
 
-    public Elemento<T> getDireita() {
-        return direita;
-    }
-
-    public void setEsquerda(Elemento<T> esquerda) {
+    public void setEsquerda(Elemento esquerda) {
         this.esquerda = esquerda;
     }
 
-    public void setDireita(Elemento<T> direita) {
-        this.direita = direita;
+    public Elemento getDireita() {
+        return direita;
     }
 
-    public void setValor(T valor) {
-        this.valor = valor;
+    public void setDireita(Elemento direita) {
+        this.direita = direita;
     }
 }

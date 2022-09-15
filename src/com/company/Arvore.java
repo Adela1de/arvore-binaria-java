@@ -1,17 +1,17 @@
 package com.company;
 
-public class Arvore<T extends Comparable> {
+public class Arvore {
 
-    private Elemento<T> raiz;
+    private Elemento raiz;
 
     public Arvore()
     {
         this.raiz = null;
     }
 
-    public void adicionar(T valor)
+    public void adicionar(Integer valor)
     {
-        Elemento<T> novoElemento = new Elemento<>(valor);
+        Elemento novoElemento = new Elemento(valor);
         Integer branch = 1;
 
         if(this.raiz == null)
@@ -21,7 +21,7 @@ public class Arvore<T extends Comparable> {
         }
         else
         {
-            Elemento<T> atual = this.raiz;
+            Elemento atual = this.raiz;
             while(true)
             {
                 if(novoElemento.getValor().compareTo(atual.getValor()) == -1)
@@ -62,7 +62,7 @@ public class Arvore<T extends Comparable> {
         else
         {
             System.out.println("Valor da raiz: "+this.raiz.getValor());
-            Elemento<T> elementoAtual = this.raiz;
+            Elemento elementoAtual = this.raiz;
             Integer branch = 2;
 
             if(elementoAtual.getEsquerda() != null) {
@@ -74,9 +74,9 @@ public class Arvore<T extends Comparable> {
             {
                 if(elementoAtual.getEsquerda() != null)
                 {
-                    System.out.print("\nElemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda().getValor());
-                    if(elementoAtual.getDireita() != null)
-                        System.out.println(" e a direita: "+elementoAtual.getDireita().getValor()+ "\n");
+                    String direita = "";
+                    direita = elementoAtual.getDireita() == null ? " e a direita vazio" :  " e a direita: " + elementoAtual.getDireita().getValor();
+                    System.out.println("\nElemento da "+branch+"º branch a esquerda: "+elementoAtual.getEsquerda().getValor() + direita);
                     elementoAtual = elementoAtual.getEsquerda();
                     branch++;
                 }
@@ -95,7 +95,7 @@ public class Arvore<T extends Comparable> {
         else
         {
             System.out.println("Valor da raiz: "+this.raiz.getValor());
-            Elemento<T> elementoAtual = this.raiz;
+            Elemento elementoAtual = this.raiz;
             Integer branch = 2;
 
             if(elementoAtual.getDireita() != null)
@@ -108,9 +108,9 @@ public class Arvore<T extends Comparable> {
             {
                 if(elementoAtual.getDireita() != null)
                 {
-                    System.out.print("\nElemento da "+branch+"º branch a esquerda: "+elementoAtual.getDireita().getValor());
-                    if(elementoAtual.getEsquerda() != null)
-                        System.out.println(" e a direita: "+elementoAtual.getEsquerda().getValor() + "\n");
+                    String esquerda = "";
+                    esquerda = elementoAtual.getEsquerda() == null ? " e a esquerda vazio" :  " e a esquerda: " + elementoAtual.getEsquerda().getValor();
+                    System.out.print("\nElemento da "+branch+"º branch a direita: "+elementoAtual.getDireita().getValor() + esquerda);
                     elementoAtual = elementoAtual.getDireita();
                     branch++;
                 }

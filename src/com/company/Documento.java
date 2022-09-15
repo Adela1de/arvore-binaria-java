@@ -4,16 +4,16 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Documento<T extends Comparable> {
+public class Documento {
 
-    private List<Arvore<T>> arvoreList;
+    private List<Arvore> arvoreList;
 
     public Documento()
     {
         this.arvoreList = new ArrayList<>();
     }
 
-    public Arvore<T> adicionarArvore(Arvore<T> arvore)
+    public Arvore adicionarArvore(Arvore arvore)
     {
         this.arvoreList.add(arvore);
         return getArvore(arvoreList.indexOf(arvore));
@@ -33,16 +33,16 @@ public class Documento<T extends Comparable> {
         }
     }
 
-    public List<Arvore<T>> getArvoreList() {
+    public List<Arvore> getArvoreList() {
         return arvoreList;
     }
 
-    public Arvore<T> getArvore(int index)
+    public Arvore getArvore(int index)
     {
         return this.arvoreList.get(index);
     }
 
-    public void setArvoreList(List<Arvore<T>> arvoreList) {
+    public void setArvoreList(List<Arvore> arvoreList) {
         this.arvoreList = arvoreList;
     }
 }
